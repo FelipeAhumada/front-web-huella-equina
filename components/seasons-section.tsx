@@ -21,15 +21,31 @@ const episodes = [
     title: "E3: Enduro Ecuestre",
     description: "Nos adentramos en una de las disciplinas más exigentes y fascinantes del mundo ecuestre: el Enduro Ecuestre, junto a Andrés Álvares, jinete y referente de esta disciplina en Chile.",
     image: "/images/enduro-ecuestre.jpg",
-    start: 2
+    
+  },
+  {
+    id: "7pd9PvQRmC4",
+    title: "E4: Pruebas Funcionales",
+    description: "De la Tradición al Deporte",
+    image: "/images/pruebas-funcionales.jpg",
+    start: 1
   }
 ]
 
 export function SeasonsSection() {
-  const [activeVideo, setActiveVideo] = useState(2) // E3 is featured by default
+  const sortedEpisodes = [...episodes].sort((a, b) => {
+    const getEpisodeNumber = (title: string) => {
+      const match = title.match(/^E(\d+)/i)
+      return match ? Number(match[1]) : 0
+    }
+
+    return getEpisodeNumber(b.title) - getEpisodeNumber(a.title)
+  })
+
+  const [activeVideo, setActiveVideo] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const currentEpisode = episodes[activeVideo]
+  const currentEpisode = sortedEpisodes[activeVideo]
 
   return (
     <>
@@ -77,9 +93,9 @@ export function SeasonsSection() {
 
             {/* Video Thumbnails */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {episodes.map((episode, index) => (
+              {sortedEpisodes.map((episode, index) => (
                 <button
-                  key={index}
+                  key={episode.id}
                   onClick={() => setActiveVideo(index)}
                   className={`relative aspect-video rounded-lg overflow-hidden group transition-all ${
                     activeVideo === index 

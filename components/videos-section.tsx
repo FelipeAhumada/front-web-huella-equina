@@ -5,20 +5,25 @@ import { Play } from "lucide-react"
 
 const videos = [
   {
-    id: "dQw4w9WgXcQ",
+    id: "7pd9PvQRmC4",
+    title: "Pruebas Funcionales",
+    description: "De la Tradición al Deporte",
+  },
+  {
+    id: "K3fs9_quVmw",
     title: "Chile Barrilete en Acción",
     description: "Mira la emoción de una carrera de barriletes"
   },
   {
-    id: "dQw4w9WgXcQ",
+    id: "djz255ehb_o",
     title: "Horseball: Técnicas Básicas",
     description: "Aprende las técnicas fundamentales del horseball"
   },
   {
-    id: "dQw4w9WgXcQ",
+    id: "ZlLzpJPCbrc",
     title: "Bienestar Equino",
     description: "La importancia del cuidado integral del caballo"
-  }
+  },
 ]
 
 export function VideosSection() {
