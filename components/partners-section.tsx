@@ -2,14 +2,46 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 import { ExternalLink } from "lucide-react"
 
 type Marca = {
   name: string
   description: string
   initials: string
+  /** Archivo en `public/images/auspiciadores/` (mismo nombre que aquí) o URL absoluta. */
   logoSrc?: string
   url?: string
+}
+
+function PartnerLogo({
+  name,
+  initials,
+  logoSrc,
+}: {
+  name: string
+  initials: string
+  logoSrc?: string
+}) {
+  const [failed, setFailed] = useState(false)
+  const showFallback = !logoSrc || failed
+
+  return (
+    <div className="relative w-full max-w-[240px] h-[88px] sm:h-[100px] mx-auto mb-6 rounded-xl overflow-hidden bg-white border border-white/20 shadow-md flex items-center justify-center px-4 py-3 ring-4 ring-primary/5 shrink-0">
+      {showFallback ? (
+        <span className="font-serif text-2xl font-bold text-primary">{initials}</span>
+      ) : (
+        <Image
+          src={logoSrc}
+          alt={name}
+          fill
+          className="object-contain p-2"
+          sizes="240px"
+          onError={() => setFailed(true)}
+        />
+      )}
+    </div>
+  )
 }
 
 const marcas: Marca[] = [
@@ -17,37 +49,51 @@ const marcas: Marca[] = [
     name: "Viña Chocalán",
     description: "Somos una viña familiar, ubicados en la zona costera del Valle del Maipo.",
     initials: "VC",
+    logoSrc: "/images/auspiciadores/chocalan.jpg",
     url: "https://www.chocalanwines.com",
   },
   {
     name: "Aldani",
     description: "Equipamiento ecuestre de alta calidad para jinetes y caballos.",
     initials: "AL",
+    logoSrc: "/images/auspiciadores/aldani.jpeg",
     url: "https://www.aldani.cl",
   },
   {
     name: "Alma de Cereza",
     description: "Transformamos la esencia de esta fruta en experiencias líquidas.",
     initials: "AC",
-    url:"https://www.almadecereza.com",
+    logoSrc: "/images/auspiciadores/almacereza.png",
+    url: "https://www.almadecereza.com",
   },
   {
     name: "Amor perfecto",
     description: "Transformando la vida de los baristas y conectando a los productores con los clientes.",
     initials: "AP",
-    url: "https://www.amorperfecto.com",
+    logoSrc: "/images/auspiciadores/amorperfecto.png",
+    url: "https://www.amorperfecto.cl",
   },
   {
     name: "Botupharma",
     description: "Nos enorgullece ser un referente en la producción de ciencia que llega al terreno.",
     initials: "BP",
+    logoSrc: "/images/auspiciadores/botupharma.jpeg",
     url: "https://www.botupharma.com",
   },
   {
     name: "Bombas Center",
     description: "Servicio especializado en sistemas de riego para la Agricultura",
     initials: "BC",
+    logoSrc: "/images/auspiciadores/bombascenter.png",
     url: "https://www.bombascenterchile.cl",
+  },
+  {
+    name: "AguaMarket",
+    description:
+      "Líder en productos y servicios para la industria del agua: equipamiento, tratamiento, riego y más.",
+    initials: "AM",
+    logoSrc: "/images/auspiciadores/aguamarket.jpg",
+    url: "https://www.aguamarket.com",
   },
 ]
 
@@ -66,25 +112,13 @@ export function PartnersSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {marcas.map((item, index) => (
+          {marcas.map((item) => (
             <div
-              key={index}
+              key={item.name}
               className="group p-8 bg-background/95 rounded-xl border border-white/10 hover:shadow-xl hover:border-secondary/40 transition-all"
             >
               <div className="flex flex-col items-center text-center h-full">
-                <div className="relative w-24 h-24 rounded-full overflow-hidden bg-white border-2 border-primary/15 shadow-md mb-6 ring-4 ring-primary/5 flex items-center justify-center shrink-0">
-                  {item.logoSrc ? (
-                    <Image
-                      src={item.logoSrc}
-                      alt={item.name}
-                      fill
-                      className="object-contain p-2"
-                      sizes="96px"
-                    />
-                  ) : (
-                    <span className="font-serif text-2xl font-bold text-primary">{item.initials}</span>
-                  )}
-                </div>
+                <PartnerLogo name={item.name} initials={item.initials} logoSrc={item.logoSrc} />
 
                 <h3 className="font-serif text-xl font-bold text-primary mb-3">{item.name}</h3>
                 <p className="text-sm text-primary/85 leading-relaxed mb-6 grow">{item.description}</p>

@@ -1,12 +1,12 @@
 import Link from "next/link"
-import { Instagram, Youtube, Mail, MapPin } from "lucide-react"
+import { Instagram, Youtube } from "lucide-react"
 import Image from "next/image"
 
 export function Footer() {
   return (
     <footer id="contacto" className="bg-foreground text-background py-16 scroll-mt-20 text-left">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-y-12 mb-12 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 lg:gap-y-12 mb-12 items-start">
           {/* Brand */}
           <div className="flex flex-col items-start sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex mb-4">
@@ -108,6 +108,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E4: Pruebas Funcionales
+                </Link>
+              </li>
+              <li>
                 <Link href="#bienestar" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
                   Bienestar Equino
                 </Link>
@@ -115,27 +120,6 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="flex flex-col items-start sm:col-span-2 lg:col-span-1">
-            <h4 className="font-serif text-lg font-bold mb-4 w-full">Contacto</h4>
-            <ul className="space-y-4 w-full">
-              <li className="flex gap-3 items-start">
-                <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden />
-                <div className="min-w-0">
-                  <p className="text-sm text-background/70">Email</p>
-                  <a href="mailto:contacto@huellaequina.cl" className="text-sm hover:text-primary transition-colors break-all">
-                    contacto@huellaequina.cl
-                  </a>
-                </div>
-              </li>
-              <li className="flex gap-3 items-start">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" aria-hidden />
-                <div className="min-w-0">
-                  <p className="text-sm text-background/70">Ubicación</p>
-                  <p className="text-sm">Viña Chocalán, Chile</p>
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div className="pt-8 border-t border-background/10 flex flex-col items-center gap-6 text-center">
