@@ -1,4 +1,9 @@
-/** URL por defecto del avance (Cloudinary). Sustituir cuando haya un video nuevo. */
+/**
+ * URL del avance (Cloudinary u otra). El modal global de “próximo capítulo” fue retirado;
+ * la URL queda disponible por si quieres usarla en otra sección o con un flag en Vercel.
+ * Para reactivar promoción explícita al subir video: redeploy con
+ * NEXT_PUBLIC_NEXT_CHAPTER_PROMO_ACTIVE=true (consumir en tu componente).
+ */
 export const DEFAULT_NEXT_CHAPTER_VIDEO_URL =
   "https://res.cloudinary.com/dqbsozfek/video/upload/v1775863843/WhatsApp_Video_2026-04-10_at_10.56.52_am2xim.mp4"
 

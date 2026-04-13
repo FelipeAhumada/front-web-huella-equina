@@ -1,9 +1,17 @@
 "use client"
 
-import { useState } from "react"
-import { Play, X } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Play } from "lucide-react"
+import { shouldShowSeasonsInlinePlayerNow } from "@/lib/seasons-inline-player"
 
 const episodes = [
+  {
+    id: "UYsYfcISKO8",
+    title: "E5: Reining en Chile",
+    description:
+      "En este episodio de Huella Equina, nos adentramos en una de las disciplinas más técnicas, elegantes y desafiantes del mundo ecuestre: el Reining.",
+    image: "/images/temporada-e5.jpg",
+  },
   {
     id: "djz255ehb_o",
     title: "E1: Horse Ball",
@@ -43,9 +51,21 @@ export function SeasonsSection() {
   })
 
   const [activeVideo, setActiveVideo] = useState(0)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [showInlinePlayer, setShowInlinePlayer] = useState(false)
+
+  useEffect(() => {
+    setShowInlinePlayer(shouldShowSeasonsInlinePlayerNow())
+  }, [])
 
   const currentEpisode = sortedEpisodes[activeVideo]
+
+  const openYoutube = () => {
+    window.open(
+      `https://www.youtube.com/watch?v=${currentEpisode.id}`,
+      "_blank",
+      "noopener,noreferrer"
+    )
+  }
 
   return (
     <>
@@ -65,20 +85,33 @@ export function SeasonsSection() {
 
           {/* Main Video Player */}
           <div className="max-w-5xl mx-auto">
-            <div 
-              className="relative aspect-video bg-black/20 rounded-xl overflow-hidden shadow-2xl mb-8 cursor-pointer group ring-1 ring-white/10"
-              onClick={() => setIsModalOpen(true)}
-            >
-              <img
-                src={`https://img.youtube.com/vi/${currentEpisode.id}/maxresdefault.jpg`}
-                alt={currentEpisode.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-foreground/30 flex items-center justify-center group-hover:bg-foreground/20 transition-colors">
-                <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Play className="w-10 h-10 text-primary-foreground ml-1" fill="currentColor" />
-                </div>
-              </div>
+            <div className="relative aspect-video bg-black/20 rounded-xl overflow-hidden shadow-2xl mb-8 ring-1 ring-white/10">
+              {showInlinePlayer ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${currentEpisode.id}?rel=0${currentEpisode.start ? `&start=${currentEpisode.start}` : ""}`}
+                  title={currentEpisode.title}
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={openYoutube}
+                  className="relative block h-full w-full cursor-pointer group text-left"
+                >
+                  <img
+                    src={`https://img.youtube.com/vi/${currentEpisode.id}/maxresdefault.jpg`}
+                    alt={currentEpisode.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-foreground/30 flex items-center justify-center group-hover:bg-foreground/20 transition-colors">
+                    <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="w-10 h-10 text-primary-foreground ml-1" fill="currentColor" />
+                    </div>
+                  </div>
+                </button>
+              )}
             </div>
 
             {/* Video Info */}
@@ -124,33 +157,6 @@ export function SeasonsSection() {
           </div>
         </div>
       </section>
-
-      {/* Video Modal */}
-      {isModalOpen && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <button
-            onClick={() => setIsModalOpen(false)}
-            className="absolute top-4 right-4 text-white hover:text-primary transition-colors"
-          >
-            <X className="w-8 h-8" />
-          </button>
-          <div 
-            className="w-full max-w-5xl aspect-video"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <iframe
-              src={`https://www.youtube.com/embed/${currentEpisode.id}?autoplay=1${currentEpisode.start ? `&start=${currentEpisode.start}` : ''}`}
-              title={currentEpisode.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full rounded-lg"
-            />
-          </div>
-        </div>
-      )}
     </>
   )
 }

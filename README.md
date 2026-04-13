@@ -8,7 +8,7 @@ Sitio institucional y de difusión del programa **Huella Equina**: plataforma au
 
 ## De qué trata el proyecto
 
-El sitio presenta la marca, el propósito del programa, episodios de **Temporadas** (contenido en video con modal de YouTube), la diferencia entre **Patrocinadores** (inversión en el programa: federaciones ecuestres) y **Auspiciadores** (marcas con franjas en el programa), secciones de **bienestar animal**, **comunidad y familia**, y datos de **contacto**. Incluye navegación fija responsive, enlaces a redes (Instagram, YouTube, TikTok) y crédito de desarrollo en el pie de página.
+El sitio presenta la marca, el propósito del programa, episodios de **Temporadas** (YouTube embebido o enlace según configuración), la diferencia entre **Patrocinadores** (inversión en el programa: federaciones ecuestres) y **Auspiciadores** (marcas con franjas en el programa), secciones de **bienestar animal**, **comunidad y familia**, y datos de **contacto**. Incluye navegación fija responsive, enlaces a redes (Instagram, YouTube, TikTok) y crédito de desarrollo en el pie de página.
 
 ---
 
@@ -20,7 +20,7 @@ El sitio presenta la marca, el propósito del programa, episodios de **Temporada
 | **Hero** | Mensaje principal, CTAs a Temporadas / Ver videos, indicador de scroll. |
 | **¿Quiénes somos?** | Historia, valores y propósito del programa. |
 | **Patrocinadores** | Federación Ecuestre de Chile y Federación de Criadores (logos y enlaces). |
-| **Temporadas** | Reproductor destacado + miniaturas (E1 Horse Ball, E2 Chile Barrilete, E3 Enduro Ecuestre). |
+| **Temporadas** | Reproductor destacado + miniaturas de episodios (lista en `components/seasons-section.tsx`). |
 | **Bienestar animal** | Compromiso y pilares (cuidado, veterinario, entrenamiento, etc.). |
 | **Comunidad y familia** | Imagen, pilares y testimonios. |
 | **Auspiciadores** | Marcas con franjas en el programa (tarjetas con iniciales o enlaces donde aplica). |
@@ -35,6 +35,12 @@ El sitio presenta la marca, el propósito del programa, episodios de **Temporada
 - **Fuentes / estilo:** paleta café / crema del tema (`app/globals.css`), tipografía serif para títulos
 - **Rutas:** página principal en `app/page.tsx`; secciones como componentes en `components/*-section.tsx`
 - **Estáticos:** imágenes y logos en `public/images/`
+
+### Actualizar la sección Temporadas (nuevo capítulo en YouTube)
+
+Cada vez que **actualices Temporadas** con un enlace de video nuevo, en `components/seasons-section.tsx` debes **agregar o ajustar el `title` y la `description` del episodio** para que correspondan al **mismo video** (mismo `id` de YouTube). El título y el texto bajo el reproductor deben reflejar fielmente el capítulo enlazado. Si el episodio más reciente debe ir primero en la grilla, mantén la convención `E{n}: …` en el título para que el orden por número siga siendo correcto.
+
+Variables relacionadas: ver `.env.example` (`NEXT_PUBLIC_SEASONS_INLINE_PLAYER_ACTIVE`: reproductor embebido entre semana; los domingos solo miniatura y enlace a YouTube).
 
 ### Scripts
 
