@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Source_Sans_3 } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { NextChapterPromoModal } from '@/components/next-chapter-promo-modal'
 import './globals.css'
 
 const playfair = Playfair_Display({ 
@@ -44,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${sourceSans.variable} ${playfair.variable} font-sans antialiased`}>
+        <NextChapterPromoModal />
         {children}
         <Analytics />
       </body>

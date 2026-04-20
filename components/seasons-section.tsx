@@ -29,7 +29,7 @@ const episodes = [
     title: "E3: Enduro Ecuestre",
     description: "Nos adentramos en una de las disciplinas más exigentes y fascinantes del mundo ecuestre: el Enduro Ecuestre, junto a Andrés Álvares, jinete y referente de esta disciplina en Chile.",
     image: "/images/enduro-ecuestre.jpg",
-    
+
   },
   {
     id: "7pd9PvQRmC4",
@@ -37,6 +37,12 @@ const episodes = [
     description: "De la Tradición al Deporte",
     image: "/images/pruebas-funcionales.jpg",
     start: 1
+  },
+  {
+    id: "jMoerxsjgqQ",
+    title: "E6:Enduro Ecuestre: Lo que NADIE te cuenta",
+    description: "Enduro ecuestre en el mundo: lo que no ves detrás de la competencia… y el rol clave del veterinario",
+    image: "/images/hqdefault.jpg"
   }
 ]
 
@@ -78,7 +84,7 @@ export function SeasonsSection() {
               Temporadas
             </h2>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              Descubre las emocionantes disciplinas ecuestres que promovemos, donde la destreza, 
+              Descubre las emocionantes disciplinas ecuestres que promovemos, donde la destreza,
               la velocidad y el trabajo en equipo se unen.
             </p>
           </div>
@@ -130,11 +136,10 @@ export function SeasonsSection() {
                 <button
                   key={episode.id}
                   onClick={() => setActiveVideo(index)}
-                  className={`relative aspect-video rounded-lg overflow-hidden group transition-all ${
-                    activeVideo === index 
-                      ? "ring-4 ring-primary shadow-lg" 
+                  className={`relative aspect-video rounded-lg overflow-hidden group transition-all ${activeVideo === index
+                      ? "ring-4 ring-primary shadow-lg"
                       : "opacity-70 hover:opacity-100"
-                  }`}
+                    }`}
                 >
                   <img
                     src={`https://img.youtube.com/vi/${episode.id}/maxresdefault.jpg`}
