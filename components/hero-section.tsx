@@ -24,9 +24,9 @@ export function HeroSection() {
           Donde el amor por los caballos{" "}
           <span className="block">deja huella</span>
         </h1>
-        
+
         <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Una plataforma audiovisual y educativa que celebra las disciplinas ecuestres 
+          Una plataforma audiovisual y educativa que celebra las disciplinas ecuestres
           a través del respeto y el bienestar animal.
         </p>
 
@@ -65,3 +65,4 @@ export function HeroSection() {
     </section>
   )
 }
+

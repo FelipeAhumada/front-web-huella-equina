@@ -95,6 +95,22 @@ const marcas: Marca[] = [
     logoSrc: "/images/auspiciadores/aguamarket.jpg",
     url: "https://www.aguamarket.com",
   },
+  {
+    name: "NetLabNawel",
+    description:
+      "Somos un laboratorio veterinario de última generación en el análisis de muestras para los integrantes más pequeños de sus familias.",
+    initials: "NL",
+    logoSrc: "/images/auspiciadores/netlabnawel.jpeg",
+    url: "#"
+    //url: "https://www.netlabnawel.cl",
+  }, {
+    name: "VetQuestrian",
+    description:
+      "Líder en productos y servicios para la industria del agua: equipamiento, tratamiento, riego y más.",
+    initials: "VQ",
+    logoSrc: "/images/auspiciadores/vetquestrian.jpeg",
+    url: "https://vetquestrianspa.cl",
+  },
 ]
 
 export function PartnersSection() {
