@@ -96,7 +96,7 @@ const marcas: Marca[] = [
     url: "https://www.aguamarket.com",
   },
   {
-    name: "NetLabNawel | Laboratorio Veterinario.",
+    name: "VetLabNawel | Laboratorio Veterinario.",
     description:
       "Laboratorio veterinario especializado en pequeños animales y equinos, equipado con tecnología de última generación.Ofrecemos diagnósticos precisos y rápidos, respaldando la labor clínica con altos estándares de calidad.",
     initials: "NL",
