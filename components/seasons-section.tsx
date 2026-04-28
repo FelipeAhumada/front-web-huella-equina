@@ -43,7 +43,13 @@ const episodes = [
     title: "E6:Enduro Ecuestre: Lo que NADIE te cuenta",
     description: "Enduro ecuestre en el mundo: lo que no ves detrás de la competencia… y el rol clave del veterinario",
     image: "/images/hqdefault.jpg"
-  }
+  },
+  {
+    id: "PWiq8m9CKY8",
+    title: "E7: Escuadras Ecuestres",
+    description: "Escuadras Ecuestres: tradición, familia y futuro del Caballo Chileno.",
+    image: "/images/escuadras-ecuestres.jpg"
+  },
 ]
 
 export function SeasonsSection() {
@@ -107,7 +113,7 @@ export function SeasonsSection() {
                   className="relative block h-full w-full cursor-pointer group text-left"
                 >
                   <img
-                    src={`https://img.youtube.com/vi/${currentEpisode.id}/maxresdefault.jpg`}
+                    src={currentEpisode.image || `https://img.youtube.com/vi/${currentEpisode.id}/maxresdefault.jpg`}
                     alt={currentEpisode.title}
                     className="w-full h-full object-cover"
                   />
@@ -137,12 +143,12 @@ export function SeasonsSection() {
                   key={episode.id}
                   onClick={() => setActiveVideo(index)}
                   className={`relative aspect-video rounded-lg overflow-hidden group transition-all ${activeVideo === index
-                      ? "ring-4 ring-primary shadow-lg"
-                      : "opacity-70 hover:opacity-100"
+                    ? "ring-4 ring-primary shadow-lg"
+                    : "opacity-70 hover:opacity-100"
                     }`}
                 >
                   <img
-                    src={`https://img.youtube.com/vi/${episode.id}/maxresdefault.jpg`}
+                    src={episode.image || `https://img.youtube.com/vi/${episode.id}/maxresdefault.jpg`}
                     alt={episode.title}
                     className="w-full h-full object-cover"
                   />

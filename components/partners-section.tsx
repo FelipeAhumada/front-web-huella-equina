@@ -96,17 +96,17 @@ const marcas: Marca[] = [
     url: "https://www.aguamarket.com",
   },
   {
-    name: "NetLabNawel",
+    name: "NetLabNawel | Laboratorio Veterinario.",
     description:
-      "Somos un laboratorio veterinario de última generación en el análisis de muestras para los integrantes más pequeños de sus familias.",
+      "Laboratorio veterinario especializado en pequeños animales y equinos, equipado con tecnología de última generación.Ofrecemos diagnósticos precisos y rápidos, respaldando la labor clínica con altos estándares de calidad.",
     initials: "NL",
     logoSrc: "/images/auspiciadores/netlabnawel.jpeg",
     url: "#"
     //url: "https://www.netlabnawel.cl",
   }, {
-    name: "VetQuestrian",
+    name: "Vetquestrian | Servicio Veterinario y Reproducción Equina",
     description:
-      "Líder en productos y servicios para la industria del agua: equipamiento, tratamiento, riego y más.",
+      "Atención clínica integral para equinos de todas las disciplinas, incluyendo urgencias y cirugías menores en terreno.Laboratorio clínico completo y servicios especializados en reproducción equina, con enfoque profesional y personalizado.",
     initials: "VQ",
     logoSrc: "/images/auspiciadores/vetquestrian.jpeg",
     url: "https://vetquestrianspa.cl",
