@@ -50,6 +50,11 @@ const episodes = [
     description: "Escuadras Ecuestres: tradición, familia y futuro del Caballo Chileno.",
     image: "/images/escuadras-ecuestres.jpg"
   },
+  {
+    id: "JJKAgMGaaSM",
+    title: "E8: Del Enganche Ecuestre a Capurachi",
+    description: "¿Puede el caballo chileno competir al más alto nivel mundial en el enganche ecuestre?"
+  }
 ]
 
 export function SeasonsSection() {
