@@ -53,7 +53,8 @@ const episodes = [
   {
     id: "JJKAgMGaaSM",
     title: "E8: Del Enganche Ecuestre a Capurachi",
-    description: "¿Puede el caballo chileno competir al más alto nivel mundial en el enganche ecuestre?"
+    description: "¿Puede el caballo chileno competir al más alto nivel mundial en el enganche ecuestre?",
+    image: "https://img.youtube.com/vi/JJKAgMGaaSM/maxresdefault.jpg"
   }
 ]
 
