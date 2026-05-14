@@ -51,6 +51,13 @@ const episodes = [
     image: "/images/escuadras-ecuestres.jpg"
   },
   {
+    id: "CMQegTLpv4c",
+    title: "E9: Equinoterapia",
+    description:
+      "Mucho más que un paseo a caballo | Huella Equina con Fundación CINTEC",
+    image: "https://img.youtube.com/vi/CMQegTLpv4c/maxresdefault.jpg",
+  },
+  {
     id: "JJKAgMGaaSM",
     title: "E8: Del Enganche Ecuestre a Capurachi",
     description: "¿Puede el caballo chileno competir al más alto nivel mundial en el enganche ecuestre?",
