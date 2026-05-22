@@ -62,6 +62,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="#quienes-somos" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  ¿Quiénes Somos?
+                </Link>
+              </li>
+              <li>
                 <Link href="#patrocinadores" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
                   Patrocinadores
                 </Link>
@@ -77,13 +82,23 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="#comunidad" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  Comunidad y Familia
+                </Link>
+              </li>
+              <li>
                 <Link href="#auspiciadores" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
                   Auspiciadores
                 </Link>
               </li>
               <li>
-                <Link href="#comunidad" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  Comunidad
+                <Link href="#asociaciones" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  Asociaciones
+                </Link>
+              </li>
+              <li>
+                <Link href="#contacto" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  Contacto
                 </Link>
               </li>
             </ul>
@@ -94,12 +109,37 @@ export function Footer() {
             <ul className="space-y-3 w-full">
               <li>
                 <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E1: Horse Ball
+                  E10: Bienestar Equino en Chile
                 </Link>
               </li>
               <li>
                 <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E2: Chile Barrilete
+                  E9: Equinoterapia
+                </Link>
+              </li>
+              <li>
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E8: Del Enganche Ecuestre a Capurachi
+                </Link>
+              </li>
+              <li>
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E7: Escuadras Ecuestres
+                </Link>
+              </li>
+              <li>
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E6: Enduro Ecuestre: Lo que NADIE te cuenta
+                </Link>
+              </li>
+              <li>
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E5: Reining en Chile
+                </Link>
+              </li>
+              <li>
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E4: Pruebas Funcionales
                 </Link>
               </li>
               <li>
@@ -109,12 +149,12 @@ export function Footer() {
               </li>
               <li>
                 <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E4: Pruebas Funcionales
+                  E2: Chile Barrilete
                 </Link>
               </li>
               <li>
-                <Link href="#bienestar" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  Bienestar Equino
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E1: Horse Ball
                 </Link>
               </li>
             </ul>

@@ -1,0 +1,14 @@
+{
+  "eyebrow": "Disciplinas y federaciones",
+  "title": "Asociaciones de deportes ecuestres en Chile",
+  "description": "Organizaciones que agrupan, regulan y promueven disciplinas ecuestres en el país.",
+  "items": [
+    {
+      "name": "Chile Endurance",
+      "description": "Asociación Chilena de Enduro Ecuestre (ACHEE). El enduro ecuestre es una prueba de resistencia: jinete y caballo recorren largas distancias en un deporte familiar, con categorías desde 20 km hasta competencias internacionales CEI supervisadas por la FEI. Información sobre inscripciones, reglamento, calendario y habilitaciones en su sitio web.",
+      "url": "https://chileendurance.cl",
+      "logoSrc": "/images/Logo-endurance.png",
+      "initials": "CE"
+    }
+  ]
+}

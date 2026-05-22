@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { SponsorsSection } from "@/components/sponsors-section"
+import { AssociationsSection } from "@/components/associations-section"
 import { SeasonsSection } from "@/components/seasons-section"
 import { WelfareSection } from "@/components/welfare-section"
 import { CommunitySection } from "@/components/community-section"
@@ -19,6 +20,7 @@ export default function Home() {
       <WelfareSection />
       <CommunitySection />
       <PartnersSection />
+      <AssociationsSection />
       <Footer />
     </main>
   )

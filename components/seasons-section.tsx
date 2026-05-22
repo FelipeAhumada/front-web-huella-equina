@@ -51,6 +51,14 @@ const episodes = [
     image: "/images/escuadras-ecuestres.jpg"
   },
   {
+    id: "4qfqRROyEGs",
+    title: "E10: Bienestar Equino en Chile",
+    description:
+      "¿Sabías que la ciencia del bienestar animal nació de la mano de \"locos\" que estudiaban delfines y jaguares?",
+    image:
+      "https://i.ytimg.com/vi/4qfqRROyEGs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBnugPBEN735K0o0lDLISeU31PNEQ",
+  },
+  {
     id: "CMQegTLpv4c",
     title: "E9: Equinoterapia",
     description:
