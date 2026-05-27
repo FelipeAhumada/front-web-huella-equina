@@ -51,6 +51,13 @@ const episodes = [
     image: "/images/escuadras-ecuestres.jpg"
   },
   {
+    id: "GbSh1-zeBs4",
+    title: "E11: Equitación de Escuela",
+    description: "La filosofía que cambiará ttu forma de montar | con Raúl Villaroel",
+    image:
+      "https://i.ytimg.com/vi/GbSh1-zeBs4/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCrFQNm7KLbqhGfCe5GCQha0gqmAA",
+  },
+  {
     id: "4qfqRROyEGs",
     title: "E10: Bienestar Equino en Chile",
     description:
