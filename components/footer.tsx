@@ -164,7 +164,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-background/10 flex flex-col items-center gap-6 text-center">
           <a
-            href="https://www.soft-innova.com"
+            href="https://soft-innova.com?utm_source=cliente_web&utm_medium=footer&utm_campaign=huellaequina"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 text-sm text-background/50 hover:text-primary transition-colors"
