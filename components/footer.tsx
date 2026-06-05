@@ -109,6 +109,16 @@ export function Footer() {
             <ul className="space-y-3 w-full">
               <li>
                 <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E12: ¿Qué aprendimos de los caballos?
+                </Link>
+              </li>
+              <li>
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  E11: Equitación de Escuela
+                </Link>
+              </li>
+              <li>
+                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
                   E10: Bienestar Equino en Chile
                 </Link>
               </li>

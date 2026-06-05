@@ -51,6 +51,14 @@ const episodes = [
     image: "/images/escuadras-ecuestres.jpg"
   },
   {
+    id: "cwOQXRiWiYk",
+    title: "E12: ¿Qué aprendimos de los caballos?",
+    description:
+      "¡Llegamos al final de un viaje maravilloso! 🐎 Bienvenidos al último episodio de la primera temporada de Huella Equina",
+    image:
+      "https://i.ytimg.com/vi/cwOQXRiWiYk/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD-hfwcFMRXRofz4f4CzJrOtPFqjA",
+  },
+  {
     id: "GbSh1-zeBs4",
     title: "E11: Equitación de Escuela",
     description: "La filosofía que cambiará ttu forma de montar | con Raúl Villaroel",
