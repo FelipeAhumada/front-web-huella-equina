@@ -111,6 +111,38 @@ const marcas: Marca[] = [
     logoSrc: "/images/auspiciadores/vetquestrian.jpeg",
     url: "https://vetquestrianspa.cl",
   },
+  {
+    name: "Dragfarma",
+    description:
+      "Laboratorio farmacéutico veterinario especializado en productos para equinos. Antiparasitarios, suplementos y soluciones de salud animal de alta calidad.",
+    initials: "DF",
+    logoSrc: "/images/auspiciadores/dragfarma.jpeg",
+    url: "https://www.dragfarma.cl",
+  },
+  {
+    name: "Kali Derma",
+    description:
+      "Línea dermatológica especializada en el cuidado de la piel equina. Productos formulados para tratar y prevenir afecciones cutáneas en caballos de deporte y trabajo.",
+    initials: "KD",
+    logoSrc: "/images/auspiciadores/kali-derma.jpeg",
+    url: "https://www.kaliderma.cl",
+  },
+  {
+    name: "Idal",
+    description:
+      "Soluciones integrales para la industria equina. Productos veterinarios y nutricionales que contribuyen al rendimiento y bienestar del caballo.",
+    initials: "ID",
+    logoSrc: "/images/auspiciadores/idal.jpeg",
+    url: "https://www.idal.cl",
+  },
+  {
+    name: "Lazka",
+    description:
+      "Marca dedicada al mundo ecuestre con productos innovadores para el cuidado, equipamiento y nutrición de caballos de alto rendimiento.",
+    initials: "LZ",
+    logoSrc: "/images/auspiciadores/lazka.jpeg",
+    url: "https://www.lazka.cl",
+  },
 ]
 
 export function PartnersSection() {
@@ -164,7 +196,7 @@ export function PartnersSection() {
             oportunidades de colaboración.
           </p>
           <a
-            href="mailto:contacto@huellaequina.cl"
+            href="mailto:escobarproduccionestv@gmail.com"
             className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-secondary-foreground font-medium rounded-lg hover:bg-secondary/90 transition-colors"
           >
             Contáctanos

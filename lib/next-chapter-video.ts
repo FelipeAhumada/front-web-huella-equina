@@ -1,8 +1,10 @@
 /**
- * URL del avance.
+ * URL del avance – Temporada 2.
+ * En desarrollo local se usa el archivo de public/videos/.
+ * Para producción subir a Cloudinary y reemplazar la URL.
  */
 export const DEFAULT_NEXT_CHAPTER_VIDEO_URL =
-  "https://res.cloudinary.com/dqbsozfek/video/upload/q_auto/f_auto/v1776306188/20260419_lhvsc2.mp4"
+  "https://res.cloudinary.com/dqbsozfek/video/upload/v1785640402/WhatsApp_Video_2026-08-01_at_1.51.39_PM_rkimps.mp4"
 
 /**
  * Activa la promo siempre, excepto domingos.

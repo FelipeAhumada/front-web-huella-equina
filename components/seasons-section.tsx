@@ -1,209 +1,160 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Play } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import { Play, Clock, ArrowRight } from "lucide-react"
+import Link from "next/link"
 import { shouldShowSeasonsInlinePlayerNow } from "@/lib/seasons-inline-player"
-
-const episodes = [
-  {
-    id: "UYsYfcISKO8",
-    title: "E5: Reining en Chile",
-    description:
-      "En este episodio de Huella Equina, nos adentramos en una de las disciplinas más técnicas, elegantes y desafiantes del mundo ecuestre: el Reining.",
-    image: "/images/temporada-e5.jpg",
-  },
-  {
-    id: "djz255ehb_o",
-    title: "E1: Horse Ball",
-    description: "Un deporte de equipo dinámico y rápido donde la 'pareja' (jinete-caballo) debe anotar un gol con una pelota equipada con asas. El ramassage permite recoger la pelota sin desmontar, demostrando una sincronía perfecta.",
-    image: "/images/horseball.jpg"
-  },
-  {
-    id: "K3fs9_quVmw",
-    title: "E2: Chile Barrilete",
-    description: "Una emocionante carrera contra el tiempo donde el jinete y su caballo deben esquivar obstáculos (barriles) dispuestos en un patrón triangular. Un deporte verdaderamente inclusivo que celebra la conexión entre jinete y caballo.",
-    image: "/images/chile-barrilete.jpg"
-  },
-  {
-    id: "ZlLzpJPCbrc",
-    title: "E3: Enduro Ecuestre",
-    description: "Nos adentramos en una de las disciplinas más exigentes y fascinantes del mundo ecuestre: el Enduro Ecuestre, junto a Andrés Álvares, jinete y referente de esta disciplina en Chile.",
-    image: "/images/enduro-ecuestre.jpg",
-
-  },
-  {
-    id: "7pd9PvQRmC4",
-    title: "E4: Pruebas Funcionales",
-    description: "De la Tradición al Deporte",
-    image: "/images/pruebas-funcionales.jpg",
-    start: 1
-  },
-  {
-    id: "jMoerxsjgqQ",
-    title: "E6:Enduro Ecuestre: Lo que NADIE te cuenta",
-    description: "Enduro ecuestre en el mundo: lo que no ves detrás de la competencia… y el rol clave del veterinario",
-    image: "/images/hqdefault.jpg"
-  },
-  {
-    id: "PWiq8m9CKY8",
-    title: "E7: Escuadras Ecuestres",
-    description: "Escuadras Ecuestres: tradición, familia y futuro del Caballo Chileno.",
-    image: "/images/escuadras-ecuestres.jpg"
-  },
-  {
-    id: "cwOQXRiWiYk",
-    title: "E12: ¿Qué aprendimos de los caballos?",
-    description:
-      "¡Llegamos al final de un viaje maravilloso! 🐎 Bienvenidos al último episodio de la primera temporada de Huella Equina",
-    image:
-      "https://i.ytimg.com/vi/cwOQXRiWiYk/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD-hfwcFMRXRofz4f4CzJrOtPFqjA",
-  },
-  {
-    id: "GbSh1-zeBs4",
-    title: "E11: Equitación de Escuela",
-    description: "La filosofía que cambiará ttu forma de montar | con Raúl Villaroel",
-    image:
-      "https://i.ytimg.com/vi/GbSh1-zeBs4/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCrFQNm7KLbqhGfCe5GCQha0gqmAA",
-  },
-  {
-    id: "4qfqRROyEGs",
-    title: "E10: Bienestar Equino en Chile",
-    description:
-      "¿Sabías que la ciencia del bienestar animal nació de la mano de \"locos\" que estudiaban delfines y jaguares?",
-    image:
-      "https://i.ytimg.com/vi/4qfqRROyEGs/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBnugPBEN735K0o0lDLISeU31PNEQ",
-  },
-  {
-    id: "CMQegTLpv4c",
-    title: "E9: Equinoterapia",
-    description:
-      "Mucho más que un paseo a caballo | Huella Equina con Fundación CINTEC",
-    image: "https://img.youtube.com/vi/CMQegTLpv4c/maxresdefault.jpg",
-  },
-  {
-    id: "JJKAgMGaaSM",
-    title: "E8: Del Enganche Ecuestre a Capurachi",
-    description: "¿Puede el caballo chileno competir al más alto nivel mundial en el enganche ecuestre?",
-    image: "https://img.youtube.com/vi/JJKAgMGaaSM/maxresdefault.jpg"
-  }
-]
+import { getEpisodesBySeason } from "@/data/episodes"
 
 export function SeasonsSection() {
-  const sortedEpisodes = [...episodes].sort((a, b) => {
-    const getEpisodeNumber = (title: string) => {
-      const match = title.match(/^E(\d+)/i)
-      return match ? Number(match[1]) : 0
-    }
-
-    return getEpisodeNumber(b.title) - getEpisodeNumber(a.title)
-  })
-
-  const [activeVideo, setActiveVideo] = useState(0)
   const [showInlinePlayer, setShowInlinePlayer] = useState(false)
+  const season2Episodes = getEpisodesBySeason(2)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     setShowInlinePlayer(shouldShowSeasonsInlinePlayerNow())
   }, [])
 
-  const currentEpisode = sortedEpisodes[activeVideo]
+  // Pausar video cuando sale de la vista, reproducir cuando vuelve
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {})
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <section id="temporadas" className="py-20 lg:py-32 bg-primary">
+      <div className="container mx-auto px-4 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <span className="text-secondary font-medium tracking-wider uppercase text-sm">
+            Contenido Audiovisual
+          </span>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mt-4 mb-6 text-balance">
+            Temporada 2
+          </h2>
+          <p className="text-white/90 text-lg max-w-2xl mx-auto">
+            Una nueva temporada de Huella Equina con historias increíbles del mundo ecuestre chileno.
+            Descubre la pasión, la tradición y el bienestar animal.
+          </p>
+        </div>
+
+        {/* Main Video Player - Video principal T2 */}
+        <div className="max-w-5xl mx-auto">
+          <div className="relative aspect-video bg-black/20 rounded-xl overflow-hidden shadow-2xl mb-8 ring-1 ring-white/10">
+            <video
+              ref={videoRef}
+              className="h-full w-full object-cover"
+              src="https://res.cloudinary.com/dqbsozfek/video/upload/v1785640368/WhatsApp_Video_2026-08-01_at_1.51.56_PM_kqixtp.mp4"
+              controls
+              autoPlay
+              loop
+              playsInline
+            />
+          </div>
+
+          {/* Episode Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {season2Episodes.map((episode) => (
+              <EpisodeCard key={episode.id} episode={episode} showInlinePlayer={showInlinePlayer} />
+            ))}
+          </div>
+
+          {/* Ver más temporadas */}
+          <div className="text-center">
+            <Link
+              href="/temporadas"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-secondary-foreground font-semibold rounded-full hover:bg-secondary/90 transition-colors shadow-lg hover:shadow-xl"
+            >
+              Ver todas las temporadas
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function EpisodeCard({
+  episode,
+  showInlinePlayer,
+}: {
+  episode: ReturnType<typeof getEpisodesBySeason>[number]
+  showInlinePlayer: boolean
+}) {
   const openYoutube = () => {
     window.open(
-      `https://www.youtube.com/watch?v=${currentEpisode.id}`,
+      `https://www.youtube.com/watch?v=${episode.id}`,
       "_blank",
       "noopener,noreferrer"
     )
   }
 
   return (
-    <>
-      <section id="temporadas" className="py-20 lg:py-32 bg-primary">
-        <div className="container mx-auto px-4 lg:px-8">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <span className="text-secondary font-medium tracking-wider uppercase text-sm">Contenido Audiovisual</span>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mt-4 mb-6 text-balance">
-              Temporadas
-            </h2>
-            <p className="text-white/90 text-lg max-w-2xl mx-auto">
-              Descubre las emocionantes disciplinas ecuestres que promovemos, donde la destreza,
-              la velocidad y el trabajo en equipo se unen.
-            </p>
+    <div className="group relative rounded-xl overflow-hidden bg-black/20 ring-1 ring-white/10 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
+      {/* Thumbnail */}
+      <div className="relative aspect-video">
+        <img
+          src={episode.image || `https://img.youtube.com/vi/${episode.id}/maxresdefault.jpg`}
+          alt={episode.title}
+          className="w-full h-full object-cover"
+        />
+
+        {episode.upcoming ? (
+          /* Badge de "Próximamente" */
+          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center gap-2">
+            <Clock className="w-10 h-10 text-white/80" />
+            <span className="text-white font-semibold text-sm bg-primary/80 px-3 py-1 rounded-full">
+              {episode.premiereLabel || "Próximamente"}
+            </span>
           </div>
-
-          {/* Main Video Player */}
-          <div className="max-w-5xl mx-auto">
-            <div className="relative aspect-video bg-black/20 rounded-xl overflow-hidden shadow-2xl mb-8 ring-1 ring-white/10">
-              {showInlinePlayer ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${currentEpisode.id}?rel=0${currentEpisode.start ? `&start=${currentEpisode.start}` : ""}`}
-                  title={currentEpisode.title}
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="absolute inset-0 h-full w-full"
-                />
-              ) : (
-                <button
-                  type="button"
-                  onClick={openYoutube}
-                  className="relative block h-full w-full cursor-pointer group text-left"
-                >
-                  <img
-                    src={currentEpisode.image || `https://img.youtube.com/vi/${currentEpisode.id}/maxresdefault.jpg`}
-                    alt={currentEpisode.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-foreground/30 flex items-center justify-center group-hover:bg-foreground/20 transition-colors">
-                    <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play className="w-10 h-10 text-primary-foreground ml-1" fill="currentColor" />
-                    </div>
-                  </div>
-                </button>
-              )}
+        ) : (
+          /* Botón de play */
+          <button
+            type="button"
+            onClick={openYoutube}
+            className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+          >
+            <div className="w-14 h-14 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Play className="w-7 h-7 text-primary-foreground ml-0.5" fill="currentColor" />
             </div>
+          </button>
+        )}
+      </div>
 
-            {/* Video Info */}
-            <div className="text-center mb-8">
-              <h3 className="font-serif text-2xl font-bold text-white mb-2">
-                {currentEpisode.title}
-              </h3>
-              <p className="text-white/85 max-w-2xl mx-auto">
-                {currentEpisode.description}
-              </p>
-            </div>
-
-            {/* Video Thumbnails */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {sortedEpisodes.map((episode, index) => (
-                <button
-                  key={episode.id}
-                  onClick={() => setActiveVideo(index)}
-                  className={`relative aspect-video rounded-lg overflow-hidden group transition-all ${activeVideo === index
-                    ? "ring-4 ring-primary shadow-lg"
-                    : "opacity-70 hover:opacity-100"
-                    }`}
-                >
-                  <img
-                    src={episode.image || `https://img.youtube.com/vi/${episode.id}/maxresdefault.jpg`}
-                    alt={episode.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-foreground/40 flex items-center justify-center group-hover:bg-foreground/30 transition-colors">
-                    <div className="w-12 h-12 bg-primary/90 rounded-full flex items-center justify-center">
-                      <Play className="w-5 h-5 text-primary-foreground ml-0.5" fill="currentColor" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-foreground/80 to-transparent">
-                    <p className="text-white text-sm font-medium text-left truncate">
-                      {episode.title}
-                    </p>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
+      {/* Info */}
+      <div className="p-4">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-xs font-medium text-secondary bg-secondary/10 px-2 py-0.5 rounded-full">
+            T{episode.season} · E{episode.episodeNumber}
+          </span>
+          {episode.upcoming && (
+            <span className="text-xs font-medium text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full">
+              Próximo estreno
+            </span>
+          )}
         </div>
-      </section>
-    </>
+        <h3 className="font-serif text-white font-bold text-sm leading-snug mb-1 line-clamp-2">
+          {episode.title}
+        </h3>
+        <p className="text-white/70 text-xs line-clamp-2">
+          {episode.description}
+        </p>
+      </div>
+    </div>
   )
 }
