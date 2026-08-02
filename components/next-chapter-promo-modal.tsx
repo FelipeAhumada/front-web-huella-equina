@@ -1,13 +1,25 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { getNextChapterVideoUrl, isNextChapterPromoActiveNow } from "@/lib/next-chapter-video"
 import { X } from "lucide-react"
+
+const DELAY_SECONDS = 8
 
 export function NextChapterPromoModal() {
   const [open, setOpen] = useState(false)
 
-  if (!open || !isNextChapterPromoActiveNow()) {
+  useEffect(() => {
+    if (!isNextChapterPromoActiveNow()) return
+
+    const timer = setTimeout(() => {
+      setOpen(true)
+    }, DELAY_SECONDS * 1000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (!open) {
     return null
   }
 
@@ -23,7 +35,7 @@ export function NextChapterPromoModal() {
           <X className="h-5 w-5" />
         </button>
         <div className="aspect-video w-full">
-          <video className="h-full w-full" src={getNextChapterVideoUrl()} controls autoPlay muted playsInline />
+          <video className="h-full w-full" src={getNextChapterVideoUrl()} controls autoPlay playsInline />
         </div>
       </div>
     </div>

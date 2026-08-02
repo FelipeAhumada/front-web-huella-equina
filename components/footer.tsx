@@ -1,14 +1,14 @@
 import Link from "next/link"
-import { Instagram, Youtube } from "lucide-react"
+import { Instagram, Youtube, Mail, Phone, Globe } from "lucide-react"
 import Image from "next/image"
 
 export function Footer() {
   return (
     <footer id="contacto" className="bg-foreground text-background py-16 scroll-mt-20 text-left">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 lg:gap-y-12 mb-12 items-start">
-          {/* Brand */}
-          <div className="flex flex-col items-start sm:col-span-2 lg:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-y-12 mb-12 items-start">
+          {/* Brand + RRSS + Logo Productora */}
+          <div className="flex flex-col items-start">
             <Link href="/" className="inline-flex mb-4">
               <Image
                 src="/images/logo_blanco.png"
@@ -23,7 +23,7 @@ export function Footer() {
               Plataforma audiovisual y educativa que celebra las disciplinas ecuestres a través del respeto y el
               bienestar animal.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mb-6">
               <Link
                 href="https://www.instagram.com/huella.equina/"
                 target="_blank"
@@ -51,8 +51,25 @@ export function Footer() {
                 </svg>
               </Link>
             </div>
+            {/* Logo Productora - comentado hasta recibir formato webp
+            <Link
+              href="https://www.instagram.com/studiocontentpro/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full"
+            >
+              <Image
+                src="/images/logo-escobar-producciones.png"
+                alt="Studio Content Pro"
+                width={375}
+                height={375}
+                className="w-full h-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </Link>
+            */}
           </div>
 
+          {/* Enlaces */}
           <div className="flex flex-col items-start">
             <h4 className="font-serif text-lg font-bold mb-4 w-full">Enlaces</h4>
             <ul className="space-y-3 w-full">
@@ -77,6 +94,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  Todas las Temporadas
+                </Link>
+              </li>
+              <li>
                 <Link href="#bienestar" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
                   Bienestar Animal
                 </Link>
@@ -92,11 +114,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#asociaciones" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  Asociaciones
-                </Link>
-              </li>
-              <li>
                 <Link href="#contacto" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
                   Contacto
                 </Link>
@@ -104,72 +121,65 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Temporadas (al medio) */}
           <div className="flex flex-col items-start">
             <h4 className="font-serif text-lg font-bold mb-4 w-full">Temporadas</h4>
             <ul className="space-y-3 w-full">
               <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E12: ¿Qué aprendimos de los caballos?
+                <Link href="/temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
+                  T1 — 12 Capítulos
                 </Link>
               </li>
               <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E11: Equitación de Escuela
+                <Link href="/temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-1">
+                  <span className="text-secondary font-bold">T2</span> Nueva temporada
                 </Link>
               </li>
               <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E10: Bienestar Equino en Chile
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E9: Equinoterapia
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E8: Del Enganche Ecuestre a Capurachi
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E7: Escuadras Ecuestres
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E6: Enduro Ecuestre: Lo que NADIE te cuenta
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E5: Reining en Chile
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E4: Pruebas Funcionales
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E3: Enduro Ecuestre
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E2: Chile Barrilete
-                </Link>
-              </li>
-              <li>
-                <Link href="#temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-block">
-                  E1: Horse Ball
+                <Link href="/temporadas" className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-1 mt-2">
+                  Ver todos →
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Contacto (a la derecha) */}
+          <div className="flex flex-col items-start">
+            <h4 className="font-serif text-lg font-bold mb-4 w-full">Contacto</h4>
+            <ul className="space-y-3 w-full">
+              <li className="text-background font-semibold text-sm">Sebastian Escobar Villarreal</li>
+              <li className="text-background/60 text-xs">Escobar Producciones</li>
+              <li>
+                <a
+                  href="mailto:escobarproduccionestv@gmail.com"
+                  className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2"
+                >
+                  <Mail className="w-4 h-4 shrink-0" />
+                  escobarproduccionestv@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.huellaequina.cl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2"
+                >
+                  <Globe className="w-4 h-4 shrink-0" />
+                  www.huellaequina.cl
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+56972279332"
+                  className="text-background/70 hover:text-primary transition-colors text-sm inline-flex items-center gap-2"
+                >
+                  <Phone className="w-4 h-4 shrink-0" />
+                  +56 9 72279332
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="pt-8 border-t border-background/10 flex flex-col items-center gap-6 text-center">
