@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { Play, Clock, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { shouldShowSeasonsInlinePlayerNow } from "@/lib/seasons-inline-player"
@@ -9,30 +9,9 @@ import { getEpisodesBySeason } from "@/data/episodes"
 export function SeasonsSection() {
   const [showInlinePlayer, setShowInlinePlayer] = useState(false)
   const season2Episodes = getEpisodesBySeason(2)
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     setShowInlinePlayer(shouldShowSeasonsInlinePlayerNow())
-  }, [])
-
-  // Pausar video cuando sale de la vista, reproducir cuando vuelve
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {})
-        } else {
-          video.pause()
-        }
-      },
-      { threshold: 0.3 }
-    )
-
-    observer.observe(video)
-    return () => observer.disconnect()
   }, [])
 
   return (
@@ -52,26 +31,47 @@ export function SeasonsSection() {
           </p>
         </div>
 
-        {/* Main Video Player - Video principal T2 */}
         <div className="max-w-5xl mx-auto">
-          <div className="relative aspect-video bg-black/20 rounded-xl overflow-hidden shadow-2xl mb-8 ring-1 ring-white/10">
-            <video
-              ref={videoRef}
-              className="h-full w-full object-cover"
-              src="https://res.cloudinary.com/dqbsozfek/video/upload/v1785640368/WhatsApp_Video_2026-08-01_at_1.51.56_PM_kqixtp.mp4"
-              controls
-              autoPlay
-              loop
-              playsInline
-            />
-          </div>
+          {/* Episodio principal - grande al centro */}
+          {season2Episodes.length > 0 && (() => {
+            const mainEpisode = season2Episodes.find((e) => e.episodeNumber === 1)
+            if (!mainEpisode) return null
+            return (
+              <div className="mb-10">
+                <div className="relative aspect-video bg-black/20 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${mainEpisode.id}?rel=0`}
+                    title={mainEpisode.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <div className="mt-4 text-center">
+                  <span className="text-xs font-medium text-secondary bg-secondary/10 px-2 py-0.5 rounded-full">
+                    T{mainEpisode.season} · E{mainEpisode.episodeNumber}
+                  </span>
+                  <h3 className="font-serif text-white font-bold text-lg mt-2 leading-snug">
+                    {mainEpisode.title}
+                  </h3>
+                  <p className="text-white/70 text-sm mt-1 max-w-2xl mx-auto">
+                    {mainEpisode.description}
+                  </p>
+                </div>
+              </div>
+            )
+          })()}
 
-          {/* Episode Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-            {season2Episodes.map((episode) => (
-              <EpisodeCard key={episode.id} episode={episode} showInlinePlayer={showInlinePlayer} />
-            ))}
-          </div>
+          {/* Cards pequeñas de los demás episodios */}
+          {season2Episodes.filter((e) => e.episodeNumber !== 1).length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+              {season2Episodes
+                .filter((e) => e.episodeNumber !== 1)
+                .map((episode) => (
+                  <EpisodeCard key={episode.id} episode={episode} showInlinePlayer={showInlinePlayer} />
+                ))}
+            </div>
+          )}
 
           {/* Ver más temporadas */}
           <div className="text-center">
@@ -96,12 +96,16 @@ function EpisodeCard({
   episode: ReturnType<typeof getEpisodesBySeason>[number]
   showInlinePlayer: boolean
 }) {
-  const openYoutube = () => {
-    window.open(
-      `https://www.youtube.com/watch?v=${episode.id}`,
-      "_blank",
-      "noopener,noreferrer"
-    )
+  const openVideo = () => {
+    if (episode.cloudinaryVideo) {
+      window.open(episode.cloudinaryVideo, "_blank", "noopener,noreferrer")
+    } else {
+      window.open(
+        `https://www.youtube.com/watch?v=${episode.id}`,
+        "_blank",
+        "noopener,noreferrer"
+      )
+    }
   }
 
   return (
@@ -126,7 +130,7 @@ function EpisodeCard({
           /* Botón de play */
           <button
             type="button"
-            onClick={openYoutube}
+            onClick={openVideo}
             className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
           >
             <div className="w-14 h-14 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">

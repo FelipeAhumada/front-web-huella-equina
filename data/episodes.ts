@@ -10,6 +10,8 @@ export interface Episode {
   upcoming?: boolean
   /** Fecha de estreno para episodios upcoming */
   premiereLabel?: string
+  /** URL de video en Cloudinary (para intros/promos que no están en YouTube) */
+  cloudinaryVideo?: string
 }
 
 export const episodes: Episode[] = [
@@ -22,8 +24,16 @@ export const episodes: Episode[] = [
     image: "https://i.ytimg.com/vi/_S6fLx33WBs/hqdefault.jpg",
     season: 2,
     episodeNumber: 1,
-    upcoming: true,
-    premiereLabel: "Estreno: Domingo",
+  },
+  {
+    id: "intro-t2",
+    title: "Introducción Temporada 2",
+    description:
+      "Conoce lo que trae la segunda temporada de Huella Equina: nuevas disciplinas, historias y la pasión por el bienestar ecuestre.",
+    image: "https://res.cloudinary.com/dqbsozfek/video/upload/v1785640368/WhatsApp_Video_2026-08-01_at_1.51.56_PM_kqixtp.jpg",
+    season: 2,
+    episodeNumber: 0,
+    cloudinaryVideo: "https://res.cloudinary.com/dqbsozfek/video/upload/v1785640368/WhatsApp_Video_2026-08-01_at_1.51.56_PM_kqixtp.mp4",
   },
 
   // ─── Temporada 1 ────────────────────────────────────────────
