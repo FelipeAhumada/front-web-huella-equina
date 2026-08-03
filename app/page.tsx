@@ -1,7 +1,9 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
+import { TvChannelsStrip } from "@/components/tv-channels-strip"
 import { AboutSection } from "@/components/about-section"
 import { SponsorsSection } from "@/components/sponsors-section"
+import { EventsSection } from "@/components/events-section"
 import { AssociationsSection } from "@/components/associations-section"
 import { SeasonsSection } from "@/components/seasons-section"
 import { WelfareSection } from "@/components/welfare-section"
@@ -14,8 +16,10 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <HeroSection />
+      <TvChannelsStrip />
       <AboutSection />
       <SponsorsSection />
+      <EventsSection />
       <SeasonsSection />
       <WelfareSection />
       <CommunitySection />

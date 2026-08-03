@@ -66,13 +66,7 @@ const marcas: Marca[] = [
     logoSrc: "/images/auspiciadores/almacereza.png",
     url: "https://www.almadecereza.com",
   },
-  {
-    name: "Amor perfecto",
-    description: "Transformando la vida de los baristas y conectando a los productores con los clientes.",
-    initials: "AP",
-    logoSrc: "/images/auspiciadores/amorperfecto.png",
-    url: "https://www.amorperfecto.cl",
-  },
+
   {
     name: "Botupharma",
     description: "Nos enorgullece ser un referente en la producción de ciencia que llega al terreno.",
@@ -141,7 +135,7 @@ const marcas: Marca[] = [
       "Marca dedicada al mundo ecuestre con productos innovadores para el cuidado, equipamiento y nutrición de caballos de alto rendimiento.",
     initials: "LZ",
     logoSrc: "/images/auspiciadores/lazka.jpeg",
-    url: "https://www.lazka.cl",
+    url: "https://mk.laskachile.com/index.html",
   },
 ]
 
