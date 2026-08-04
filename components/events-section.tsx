@@ -18,14 +18,14 @@ const eventos: Evento[] = [
     date: "2026-10-28",
     location: "Club de Polo San Cristóbal",
     imageSrc: "/images/eventos/cuarta-prueba-doma.jpeg",
-    url: undefined,
+    url: "https://www.instagram.com/matiasvialperez/",
   },
   {
     title: "Octavo Concurso de Adiestramiento",
     date: "2026-10-28",
     location: "Santiago Paperchase Club",
     imageSrc: "/images/eventos/octavo-concurso-adiestramiento.jpeg",
-    url: undefined,
+    url: "https://www.aldani.cl",
   },
 ]
 

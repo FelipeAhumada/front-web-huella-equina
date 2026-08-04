@@ -95,8 +95,7 @@ const marcas: Marca[] = [
       "Laboratorio veterinario especializado en pequeños animales y equinos, equipado con tecnología de última generación.Ofrecemos diagnósticos precisos y rápidos, respaldando la labor clínica con altos estándares de calidad.",
     initials: "NL",
     logoSrc: "/images/auspiciadores/netlabnawel.jpeg",
-    url: "#"
-    //url: "https://www.netlabnawel.cl",
+    url: "https://www.instagram.com/vetlab.nawel/?hl=es-la",
   }, {
     name: "Vetquestrian | Servicio Veterinario y Reproducción Equina",
     description:
@@ -111,7 +110,7 @@ const marcas: Marca[] = [
       "Laboratorio farmacéutico veterinario especializado en productos para equinos. Antiparasitarios, suplementos y soluciones de salud animal de alta calidad.",
     initials: "DF",
     logoSrc: "/images/auspiciadores/dragfarma.jpeg",
-    url: "https://www.dragfarma.cl",
+    url: "https://dragpharma.cl/",
   },
   {
     name: "Kali Derma",
@@ -136,6 +135,14 @@ const marcas: Marca[] = [
     initials: "LZ",
     logoSrc: "/images/auspiciadores/lazka.jpeg",
     url: "https://mk.laskachile.com/index.html",
+  },
+  {
+    name: "Alma Ecuestre | Fotografía Ecuestre",
+    description:
+      "Fotografía ecuestre profesional que captura momentos únicos de amazonas y jinetes. Cobertura de concursos ecuestres, sesiones fotográficas y retratos con caballos.",
+    initials: "AE",
+    logoSrc: "/images/auspiciadores/alma-ecuestre.jpeg",
+    url: "https://javierareyesalmaecuestrefotografia.mypixieset.com/",
   },
 ]
 
