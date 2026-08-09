@@ -17,6 +17,17 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "oaPGMbpLpzs",
+    title: "El Secreto del Enduro Equino: ¿Hasta Dónde Puede Resistir un Caballo? con Dr. Cristian Madariaga",
+    description:
+      "¿Cómo logra un caballo recorrer más de 100 kilómetros a toda velocidad sin poner en riesgo su salud? En este episodio de Huella Equina exploramos el enduro equino junto al Dr. Cristian Madariaga.",
+    image: "https://i.ytimg.com/vi/oaPGMbpLpzs/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 2,
+    upcoming: true,
+    premiereLabel: "Estreno domingo 9 de agosto",
+  },
+  {
     id: "_S6fLx33WBs",
     title: "¿El Polo es Solo para la Élite? La Realidad del Polista Profesional Chileno | Matías Vial",
     description:
