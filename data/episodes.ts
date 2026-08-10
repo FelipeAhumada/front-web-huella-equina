@@ -24,8 +24,6 @@ export const episodes: Episode[] = [
     image: "https://i.ytimg.com/vi/oaPGMbpLpzs/hqdefault.jpg",
     season: 2,
     episodeNumber: 2,
-    upcoming: true,
-    premiereLabel: "Estreno domingo 9 de agosto",
   },
   {
     id: "_S6fLx33WBs",
