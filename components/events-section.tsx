@@ -21,11 +21,10 @@ const eventos: Evento[] = [
     url: "https://www.instagram.com/matiasvialperez/",
   },
   {
-    title: "Octavo Concurso de Adiestramiento",
-    date: "2026-10-28",
-    location: "Santiago Paperchase Club",
-    imageSrc: "/images/eventos/octavo-concurso-adiestramiento.jpeg",
-    url: "https://www.aldani.cl",
+    title: "Calendario Concursos Agosto",
+    date: "2026-08-31",
+    location: "Por confirmar",
+    imageSrc: "/images/eventos/calendario-concursos-agosto.png",
   },
 ]
 
