@@ -17,6 +17,15 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "EV4Un_I8QfE",
+    title: "La VERDAD detrás del CABALLO ÁRABE: Mitos, Criaderos y Conexión Espiritual con Elizabeth Kassis",
+    description:
+      "Descubrimos la historia, los mitos y la conexión espiritual detrás del caballo árabe en Chile junto a Elizabeth Kassis.",
+    image: "https://i.ytimg.com/vi/EV4Un_I8QfE/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 3,
+  },
+  {
     id: "oaPGMbpLpzs",
     title: "El Secreto del Enduro Equino: ¿Hasta Dónde Puede Resistir un Caballo? con Dr. Cristian Madariaga",
     description:
