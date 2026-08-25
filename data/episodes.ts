@@ -17,6 +17,15 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "YfU6MyZJ3oY",
+    title: "Experto en Biotecnología Equina Explica Cómo Preñar a tu Yegua Sin Riesgos | Huella Equina",
+    description:
+      "¿Es mejor la monta natural o la inseminación artificial? ¿Se puede sacar más de una cría al año de la misma yegua sin poner en riesgo su salud? 🐴🔬\n\nEn este apasionante episodio de Huella Equina, Sebastián Escobar y la Dra. María Elina Tejeda reciben nuevamente al destacado Dr. Cristian Ugaz Ruiz, médico veterinario, investigador, doctor en ciencias y referente en biotecnologías reproductivas y bienestar animal.\n\nAcompáñanos a descubrir la ciencia real detrás de la crianza moderna de caballos: mitos y realidades, técnicas de vanguardia, bienestar animal, genética del Caballo Chileno y la democratización de la biotecnología.",
+    image: "https://i.ytimg.com/vi/YfU6MyZJ3oY/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 4,
+  },
+  {
     id: "EV4Un_I8QfE",
     title: "La VERDAD detrás del CABALLO ÁRABE: Mitos, Criaderos y Conexión Espiritual con Elizabeth Kassis",
     description:
