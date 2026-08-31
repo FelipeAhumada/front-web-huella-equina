@@ -17,6 +17,15 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "9d8iEauSyZw",
+    title: "Lo que NADIE te contó sobre Hípica Chilena: Entrenamiento, Bienestar animal y más | con Ignacio Inda",
+    description:
+      "¿Se pueden arreglar las carreras de caballos? ¿A qué edad empieza realmente a entrenar un Pura Sangre? ¿Cómo se resguarda el bienestar animal en un corral de alta competencia?\n\nEn este apasionante episodio de Huella Equina, nos adentramos en el corazón de la hípica chilena junto a José Ignacio Inda, preparador de caballos Fina Sangre de Carrera de tercera generación, heredero de un legado centenario en el turf nacional.\n\nJunto a Sebastián Escobar y la Dra. María Elina Tejeda, conversamos sin filtro sobre:\n🔹 La historia y dinastía de la familia Inda en los corrales desde 1900.\n🔹 La evolución del turf en Chile: De los recintos llenos a la era de Teletrak y el celular.\n🔹 Diferencias clave entre pistas de pasto y arena en Club Hípico, Hipódromo Chile y Sporting de Viña.\n🔹 Mito o Realidad: ¿Están arregladas las carreras? ¿El mito del \"dato seguro\"?\n🔹 Bienestar Equino en la hípica: Regulación estricta del doping, nutrición 24/7 y la nueva normativa sobre el uso de la fusta/huasca.\n🔹 La preparación del jinete aprendiz y las exigencias de peso.\n🔹 La emotiva victoria familiar en El Derby de Viña del Mar.\n🔹 El futuro de la actividad y los desafíos de las apuestas en Chile.\n\n¡Un episodio imperdible para amantes de los equinos, la hípica y el deporte!\n\n📌 Enlaces de interés:\n🌐 Sitio web oficial Huella Equina: www.huellaequina.cl\n📸 Instagram del invitado (José Ignacio Inda): https://www.instagram.com/ignacio_inda/\n\n---\n\n💡 Si te apasiona el mundo de los caballos y el bienestar animal, ¡no olvides dejar tu Like 👍, SUSCRIBIRTE al canal y activar la campanita 🔔 para no perderte ningún estreno cada domingo a las 22:00 hrs! Déjanos tus comentarios y comparte este video con otros apasionados del mundo ecuestre.\n\n🎬 Créditos y Producción:\nEste programa es una idea original del canal Huella Equina.\nEscobar Producciones\nescobarproduccionestv@gmail.com\nwww.huellaequina.cl\n\nDirección y Realización Audiovisual: Studio Content Pro \n👉 Instagram: https://www.instagram.com/studiocontentpro/",
+    image: "https://i.ytimg.com/vi/9d8iEauSyZw/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 5,
+  },
+  {
     id: "YfU6MyZJ3oY",
     title: "Experto en Biotecnología Equina Explica Cómo Preñar a tu Yegua Sin Riesgos | Huella Equina",
     description:

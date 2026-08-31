@@ -32,9 +32,9 @@ export function SeasonsSection() {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          {/* Episodio principal - T2E4 grande al centro */}
+          {/* Episodio principal - T2E5 grande al centro */}
           {season2Episodes.length > 0 && (() => {
-            const mainEpisode = season2Episodes.find((e) => e.episodeNumber === 4)
+            const mainEpisode = season2Episodes.find((e) => e.episodeNumber === 5)
             if (!mainEpisode) return null
             return (
               <div className="mb-10">
@@ -54,19 +54,16 @@ export function SeasonsSection() {
                   <h3 className="font-serif text-white font-bold text-lg mt-2 leading-snug">
                     {mainEpisode.title}
                   </h3>
-                  <p className="text-white/70 text-sm mt-1 max-w-2xl mx-auto">
-                    {mainEpisode.description}
-                  </p>
                 </div>
               </div>
             )
           })()}
 
           {/* Cards pequeñas: episodios anteriores e Intro T2 */}
-          {season2Episodes.filter((e) => e.episodeNumber !== 4).length > 0 && (
+          {season2Episodes.filter((e) => e.episodeNumber !== 5).length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               {season2Episodes
-                .filter((e) => e.episodeNumber !== 4)
+                .filter((e) => e.episodeNumber !== 5)
                 .sort((a, b) => b.episodeNumber - a.episodeNumber)
                 .map((episode) => (
                   <EpisodeCard key={episode.id} episode={episode} showInlinePlayer={showInlinePlayer} />
