@@ -17,6 +17,15 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "xMHXp9aCCyg",
+    title: "CAMINO A ODESUR: ADIESTRAMIENTO, Superación Médica, Rigor Militar y Bienestar Animal",
+    description:
+      "¿Es el adiestramiento la disciplina más exigente y sutil del deporte ecuestre? En este episodio de Huella Equina, Sebastián Escobar y la Dra. María Elina Tejeda conversan a fondo con Daniela Araneda Huidobro, Maestra de Equitación, jinete de alta competencia y reservista del Ejército de Chile.\n\nDaniela desglosa la equitación de alto nivel: cómo se entrena un binomio desde cero, la biomecánica detrás de movimientos como la pirueta y el piaffe, el protocolo de bienestar animal FEI y los cuidados necesarios para evitar lesiones. Además, comparte la historia médica y deportiva que la llevó camino a los Juegos Odesur.",
+    image: "https://i.ytimg.com/vi/xMHXp9aCCyg/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 6,
+  },
+  {
     id: "9d8iEauSyZw",
     title: "Lo que NADIE te contó sobre Hípica Chilena: Entrenamiento, Bienestar animal y más | con Ignacio Inda",
     description:

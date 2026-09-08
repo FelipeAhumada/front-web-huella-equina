@@ -32,9 +32,9 @@ export function SeasonsSection() {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          {/* Episodio principal - T2E5 grande al centro */}
+          {/* Episodio principal - T2E6 grande al centro */}
           {season2Episodes.length > 0 && (() => {
-            const mainEpisode = season2Episodes.find((e) => e.episodeNumber === 5)
+            const mainEpisode = season2Episodes.find((e) => e.episodeNumber === 6)
             if (!mainEpisode) return null
             return (
               <div className="mb-10">
@@ -60,10 +60,10 @@ export function SeasonsSection() {
           })()}
 
           {/* Cards pequeñas: episodios anteriores e Intro T2 */}
-          {season2Episodes.filter((e) => e.episodeNumber !== 5).length > 0 && (
+          {season2Episodes.filter((e) => e.episodeNumber !== 6).length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               {season2Episodes
-                .filter((e) => e.episodeNumber !== 5)
+                .filter((e) => e.episodeNumber !== 6)
                 .sort((a, b) => b.episodeNumber - a.episodeNumber)
                 .map((episode) => (
                   <EpisodeCard key={episode.id} episode={episode} showInlinePlayer={showInlinePlayer} />
