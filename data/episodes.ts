@@ -17,6 +17,15 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "azFnVTyT9ns",
+    title: "Del Salto a la Medicina Veterinaria: Una Mirada Integral con Almendra Resano",
+    description:
+      "¿Cómo se combinan la técnica en la pista de salto, la enseñanza formativa y la ciencia veterinaria para potenciar el rendimiento del caballo deportista? En este episodio de Huella Equina conversamos con Almendra Resano sobre la conexión entre deporte ecuestre, formación y medicina veterinaria.",
+    image: "https://i.ytimg.com/vi/azFnVTyT9ns/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 7,
+  },
+  {
     id: "xMHXp9aCCyg",
     title: "CAMINO A ODESUR: ADIESTRAMIENTO, Superación Médica, Rigor Militar y Bienestar Animal",
     description:
