@@ -27,5 +27,9 @@ Publicar el video de YouTube `azFnVTyT9ns` como episodio principal de la Tempora
 - Build: `npm run build` aprobado.
 - Lint: no ejecutable porque `eslint` no está instalado en el entorno (`eslint: command not found`).
 - Rama publicada en `origin`; falta crear/actualizar el PR desde GitHub.
+- Despliegue a producción: aprobado en Vercel con `--scope felipeahumadaaraya-gmailcoms-projects`.
+- Deployment: `dpl_EKdBwvhuMAAJMagJrA3LJ6uvpcvk`.
+- URL de producción: `https://huellaequina.cl`.
+- Verificación HTTP: T2E7 visible en `/` y `/temporadas`.
 
 ## Status: IN_PROGRESS
