@@ -17,6 +17,15 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "Pz6YmFZx2aM",
+    title: "Escuelas de Ponys: Vínculo, Pedagogía y Pasión por la Equitación con Natalie Bittner",
+    description:
+      "¿Qué tan cruciales son las escuelas de ponys en el desarrollo integral de los futuros jinetes y en la creación de un lazo único desde la infancia? En este episodio de Huella Equina conversamos con Natalie Bittner sobre pedagogía, vínculo y pasión por la equitación.",
+    image: "https://i.ytimg.com/vi/Pz6YmFZx2aM/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 8,
+  },
+  {
     id: "azFnVTyT9ns",
     title: "Del Salto a la Medicina Veterinaria: Una Mirada Integral con Almendra Resano",
     description:
