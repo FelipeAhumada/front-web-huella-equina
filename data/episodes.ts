@@ -17,6 +17,15 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "MGZuwv4iBOg",
+    title: "Horseball un deporte que sorprende",
+    description:
+      "En este nuevo episodio de Huella Equina, la Dra. María Elina Tejeda junto a Sebastián Escobar conversan con Pedro Díaz de Valdés, del Club Ecuestre Parque Chacai, ubicado en la comuna de Padre Hurtado, Región Metropolitana, para conocer cómo se ejecuta el deporte ecuestre y cómo participan jinetes y clubes en actividades deportivas, tanto en Chile como en el extranjero.\n\nDescubre cómo se vive la equitación desde dentro de un club, qué implica prepararse para competir y cómo la experiencia internacional abre nuevas oportunidades para el deporte ecuestre chileno.\n\nEn este episodio aprenderás sobre la ejecución del deporte, la participación en Chile y el extranjero, el bienestar y cuidado de los caballos, y el rol del Club Ecuestre Parque Chacai en la comunidad ecuestre.",
+    image: "https://i.ytimg.com/vi/MGZuwv4iBOg/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 9,
+  },
+  {
     id: "Pz6YmFZx2aM",
     title: "Escuelas de Ponys: Vínculo, Pedagogía y Pasión por la Equitación con Natalie Bittner",
     description:
