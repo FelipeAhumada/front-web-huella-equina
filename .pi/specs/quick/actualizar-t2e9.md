@@ -17,7 +17,9 @@ Publicar el video de YouTube `MGZuwv4iBOg` como episodio principal de la Tempora
 ## Estado de ejecución
 - Build local: `npm run build` aprobado.
 - Servidor local: `http://localhost:3001` levantado y `/temporadas` responde HTTP 200 con T2E9 presente.
-- Despliegue a producción: pendiente de autorización explícita.
-- PR hacia `main`: pendiente de autorización explícita.
+- PR abierto hacia `main`: [#8](https://github.com/FelipeAhumada/front-web-huella-equina/pull/8).
+- Despliegue a producción aprobado en Vercel con `--scope felipeahumadaaraya-gmailcoms-projects`.
+- Deployment: `dpl_242ahXJYuLtYBiWGmyDtfAvjnC3T`.
+- URL de producción: `https://huellaequina.cl`.
 
 ## Status: DONE
