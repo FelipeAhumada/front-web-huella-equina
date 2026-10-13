@@ -17,6 +17,42 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "v8Wfs8mHy3E",
+    title: "¿Pueden los caballos ayudarnos a sanar?",
+    description:
+      "En este episodio de Huella Equina, la Dra. María Elina Tejeda junto a Sebastián Escobar conversan con Paula Espinosa Schlack, Psicóloga de La Tropera: Psicoterapia con Caballos, para profundizar en el fascinante mundo de la salud mental, el desarrollo personal y la conexión profunda entre seres humanos y equinos.\n\nDescubre cómo se vive el proceso terapéutico facilitado por caballos, qué implica una sesión de psicoterapia asistida y de qué manera la sensibilidad natural del caballo permite sanar, gestionar emociones y potenciar el bienestar integral de las personas.\n\nEn este episodio aprenderás sobre la Psicoterapia Asistida con Caballos, el trabajo de La Tropera, la conexión y el lenguaje corporal, el bienestar y manejo respetuoso, y el impacto de sanar en contacto directo con la naturaleza y los equinos.",
+    image: "https://i.ytimg.com/vi/v8Wfs8mHy3E/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 10,
+  },
+  {
+    id: "MGZuwv4iBOg",
+    title: "Horseball un deporte que sorprende",
+    description:
+      "En este nuevo episodio de Huella Equina, la Dra. María Elina Tejeda junto a Sebastián Escobar conversan con Pedro Díaz de Valdés, del Club Ecuestre Parque Chacai, ubicado en la comuna de Padre Hurtado, Región Metropolitana, para conocer cómo se ejecuta el deporte ecuestre y cómo participan jinetes y clubes en actividades deportivas, tanto en Chile como en el extranjero.\n\nDescubre cómo se vive la equitación desde dentro de un club, qué implica prepararse para competir y cómo la experiencia internacional abre nuevas oportunidades para el deporte ecuestre chileno.\n\nEn este episodio aprenderás sobre la ejecución del deporte, la participación en Chile y el extranjero, el bienestar y cuidado de los caballos, y el rol del Club Ecuestre Parque Chacai en la comunidad ecuestre.",
+    image: "https://i.ytimg.com/vi/MGZuwv4iBOg/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 9,
+  },
+  {
+    id: "Pz6YmFZx2aM",
+    title: "Escuelas de Ponys: Vínculo, Pedagogía y Pasión por la Equitación con Natalie Bittner",
+    description:
+      "¿Qué tan cruciales son las escuelas de ponys en el desarrollo integral de los futuros jinetes y en la creación de un lazo único desde la infancia? En este episodio de Huella Equina conversamos con Natalie Bittner sobre pedagogía, vínculo y pasión por la equitación.",
+    image: "https://i.ytimg.com/vi/Pz6YmFZx2aM/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 8,
+  },
+  {
+    id: "azFnVTyT9ns",
+    title: "Del Salto a la Medicina Veterinaria: Una Mirada Integral con Almendra Resano",
+    description:
+      "¿Cómo se combinan la técnica en la pista de salto, la enseñanza formativa y la ciencia veterinaria para potenciar el rendimiento del caballo deportista? En este episodio de Huella Equina conversamos con Almendra Resano sobre la conexión entre deporte ecuestre, formación y medicina veterinaria.",
+    image: "https://i.ytimg.com/vi/azFnVTyT9ns/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 7,
+  },
+  {
     id: "xMHXp9aCCyg",
     title: "CAMINO A ODESUR: ADIESTRAMIENTO, Superación Médica, Rigor Militar y Bienestar Animal",
     description:
