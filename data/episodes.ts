@@ -17,6 +17,15 @@ export interface Episode {
 export const episodes: Episode[] = [
   // ─── Temporada 2 ────────────────────────────────────────────
   {
+    id: "v8Wfs8mHy3E",
+    title: "¿Pueden los caballos ayudarnos a sanar?",
+    description:
+      "En este episodio de Huella Equina, la Dra. María Elina Tejeda junto a Sebastián Escobar conversan con Paula Espinosa Schlack, Psicóloga de La Tropera: Psicoterapia con Caballos, para profundizar en el fascinante mundo de la salud mental, el desarrollo personal y la conexión profunda entre seres humanos y equinos.\n\nDescubre cómo se vive el proceso terapéutico facilitado por caballos, qué implica una sesión de psicoterapia asistida y de qué manera la sensibilidad natural del caballo permite sanar, gestionar emociones y potenciar el bienestar integral de las personas.\n\nEn este episodio aprenderás sobre la Psicoterapia Asistida con Caballos, el trabajo de La Tropera, la conexión y el lenguaje corporal, el bienestar y manejo respetuoso, y el impacto de sanar en contacto directo con la naturaleza y los equinos.",
+    image: "https://i.ytimg.com/vi/v8Wfs8mHy3E/hqdefault.jpg",
+    season: 2,
+    episodeNumber: 10,
+  },
+  {
     id: "MGZuwv4iBOg",
     title: "Horseball un deporte que sorprende",
     description:
